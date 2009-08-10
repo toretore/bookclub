@@ -1,0 +1,25 @@
+ul.books {
+  list-style-type: none;
+  padding: 0;
+}
+
+  ul.books li.book {
+    -moz-border-radius: 0.5em;
+    -webkit-border-radius: 0.5em;
+    padding: 0.25em;
+  }
+
+    ul.books li.book:before {
+      content: "✘ ";
+      color: #990000;
+    }
+
+    ul.books li.book.read:before {
+      content: "✔ ";
+      color: #009900;
+    }
+
+    ul.books li.book.enhanced:hover {
+      background-color: #ffff99;
+      cursor: default;
+    }
