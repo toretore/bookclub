@@ -1,0 +1,10 @@
+<%= stylesheet_link_tag "books" %>
+<%= javascript_include_tag "books" %>
+
+<h2>My books</h2>
+
+<ul class="books">
+  <% for book in @books -%>
+    <li class="book<%= @user.reads.include?(book) ? " read" : "" %>"><%= h(book.title) %></li>
+  <% end -%>
+</ul>

@@ -1,25 +1,19 @@
 ActionController::Routing::Routes.draw do |map|
+
   map.resources :reviews
-
   map.resources :manuscripts
-
   map.resources :categories
-
   map.resources :authors
-
   map.resources :genres
-
   map.resources :readings
-
   map.resources :friendships
+  map.resources :books
+  map.resources :users do |user|
+    user.resources :books, :controller => "users/books"
+  end
+  map.resource :session#,:controller => 'sessions', :only => [:new, :create, :destroy]
 
   map.root :controller => 'books', :action => 'index'
-
-  map.resources :books
-
-  map.resources :users
-
-  map.resource :session#,:controller => 'sessions', :only => [:new, :create, :destroy]
 
   # The priority is based upon order of creation: first created -> highest priority.
 
